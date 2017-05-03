@@ -67,4 +67,15 @@ feature 'restaurants' do
       expect(page).to have_content('Restaurant deleted succesfully')
     end
   end
+
+  context 'invalid restaurant' do
+    scenario "it doesn't allow the name because it's too short" do
+      visit restaurants_path
+      click_link 'Add a restaurant'
+      fill_in 'Name', with: 'kf'
+      click_button 'Create Restaurant'
+      expect(page).not_to have_css 'h2', text: 'kf'
+      expect(page).to have_content 'error'
+    end
+  end
 end

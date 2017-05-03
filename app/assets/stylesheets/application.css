@@ -13,3 +13,11 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+  background-color: beige;
+}
+
+.field_with_errors {
+  box-shadow: 0 0 3px #CC0000;
+}
