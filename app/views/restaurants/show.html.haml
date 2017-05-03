@@ -1,2 +1,7 @@
 %p= @restaurant.name
 %p= @restaurant.description
+- @restaurant.reviews.each do |review|
+  Thoughts:
+  %p= review.thoughts
+  Rating:
+  %p= review.rating
